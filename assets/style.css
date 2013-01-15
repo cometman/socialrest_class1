@@ -1,0 +1,11 @@
+header {
+	background-image: url("cabstr.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100px;
+}
+
+#loginSection {
+	margin-top: 5%;
+	text-align: center;
+}
