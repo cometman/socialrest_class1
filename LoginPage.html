@@ -3,13 +3,71 @@
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
 	</head>
 	<header>
-
+		<button id="logoutButton" onclick="logout()">Logout</button>
 	</header>
 
 	<body>
 		<section id="loginSection">
-			<button>Login with Facebook</button>
+			<button onclick="login()">Login with Facebook</button>
 			<button>Login with Twitter</button>
 		</section>
+
+		<div id="fb-root"></div>
+		<script>
+		  
+		  // Facebook Init function
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '467241193324372', // App ID
+		      status     : true, // check login status
+		      cookie     : true, // enable cookies to allow the server to access the session
+		      xfbml      : true  // parse XFBML
+		    });
+
+		    // Additional init code here
+
+		 //    FB.getLoginStatus(function(response) {
+			//   if (response.status === 'connected') {
+			//     // connected
+			//   } else if (response.status === 'not_authorized') {
+			//     // not_authorized
+			//     login();
+			//   } else {
+			//     // not_logged_in
+			//     login();
+			//   }
+			// });
+
+		  };
+
+		  // Load the SDK Asynchronously
+		  (function(d){
+		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement('script'); js.id = id; js.async = true;
+		     js.src = "//connect.facebook.net/en_US/all.js";
+		     ref.parentNode.insertBefore(js, ref);
+		   }(document));
+
+		  // Login to Facebook
+		  function login() {
+			    FB.login(function(response) {
+			        if (response.authResponse) {
+			            // connected
+			        } else {
+			            // cancelled
+			        }
+			    });
+			}
+
+			function logout() {
+				FB.logout(function(response) {
+	  				// user is now logged out
+				});
+			}
+		</script>
+
 	</body>
-</html>
+
+
+ </html>
