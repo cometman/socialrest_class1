@@ -1,0 +1,6 @@
+--Download Sublime, Git
+--Install web server
+	- http://127.0.0.1/~cometman/socialrest_class1/LoginPage.html
+--Prepare Application on Facebook 
+--Include JavaScript from Facebook SDK 
+

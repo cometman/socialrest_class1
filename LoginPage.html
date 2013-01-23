@@ -7,6 +7,8 @@
 	</header>
 
 	<body>
+		
+
 		<section id="loginSection">
 			<button onclick="login()">Login with Facebook</button>
 			<button>Login with Twitter</button>
@@ -15,14 +17,19 @@
 		<div id="fb-root"></div>
 		<script>
 		  
+		  var dispName = "test";
 		  // Facebook Init function
 		  window.fbAsyncInit = function() {
 		    FB.init({
-		      appId      : '467241193324372', // App ID
+		      appId      : '523151661050449', // App ID
 		      status     : true, // check login status
 		      cookie     : true, // enable cookies to allow the server to access the session
 		      xfbml      : true  // parse XFBML
 		    });
+<<<<<<< HEAD
+=======
+
+>>>>>>> Baseline for class 2
 		  };
 
 		  // Load the SDK Asynchronously
@@ -38,7 +45,7 @@
 		  function login() {
 			    FB.login(function(response) {
 			        if (response.authResponse) {
-			            // connected
+			            console.log(response);
 			        } else {
 			            // cancelled
 			        }
@@ -48,9 +55,12 @@
 			function logout() {
 				FB.logout(function(response) {
 	  				// user is now logged out
+	  				console.log(response);
 				});
 			}
 		</script>
+
+		<div id="content"></div>
 
 	</body>
 
